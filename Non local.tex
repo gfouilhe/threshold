@@ -56,7 +56,7 @@ Pour le problème de Cauchy associé à la condition initiale :
 u(t=0,x) = u_0(x) = \mathds{1}_{[-\ell,\ell]}(x) 
 \end{equation}
 
-\noindent avec $\ell >0$, il a été montré \textbf{(Zlatos 06)} l'existence de $\ell^* $ tel que :
+\noindent avec $\ell >0$, il a été montré [1] l'existence de $\ell^* >0$ tel que :
 
 $\cdot~ \forall \ell < \ell^* , u(t,x) \underset{t \to +\infty}{\overset{unif}{\longrightarrow}}0$ (Extinction)
 
@@ -70,7 +70,7 @@ Le but de ce document est d'essayer d'obtenir des résultats similaires, mais po
 
 \section{L'opérateur non-local}
 
-\indent Ici, nous allons donc étudier un opérateur différent de celui du $(2)$. L'équation sera présentée de la forme : 
+\indent Ici, nous allons donc étudier un opérateur différent de celui du $(2)$. L'équation sera présentée, dans $L^2(\mathbb{R})$, sous la forme : 
 \begin{equation}
 \partial_t u =  d(-u + K*u)+f(u)
 \end{equation}
@@ -80,7 +80,7 @@ avec $f$ toujours supposée bistable, où $d$ est le coefficient de diffusion, $
 (i)~~ &K, K' \in L^1(\mathbb{R}) \\
 (ii)~~ & K \text{ est paire, } \\
 (iii) ~~& \int_\mathbb{R} K(x)dx = 1 \\
-(iv) ~~& \int_\mathbb{R} K(y)|y|dy < \infty
+(iv) ~~& \int_\mathbb{R} K(y)|y|^2dy < \infty
 \end{split}
 \end{equation}
 Pour notre étude, on prendra comme noyau $K(x) = \frac{1}{2} e^{-|x|} $ (FIGURE 1).
@@ -98,7 +98,7 @@ Cette équation partage quelques propriétés communes avec l'équation de la ch
 
 
 \subsection{Solution fondamentale}
-\indent Nous allons rappeler brièvement les étapes pour avoir une solution de $(4)$ sans terme de réaction, et avec comme condition initale $u(0,x)=u_0(x)$. On suivra la démarche effectuer par Chaseigne via les transformées de Fourier. \newline
+\indent Nous allons rappeler brièvement les étapes pour avoir une solution de $(4)$ sans terme de réaction, et avec comme condition initale $u(0,x)=u_0(x)$. On suivra la démarche [4] via les transformées de Fourier. \newline
 
 \noindent Il nous faut d'abord calculer la solution fondamentale qui correspond à la solution vérifiant :
 
@@ -158,12 +158,12 @@ U(+\infty) = 0 , U(-\infty) = 1
 \end{equation}
 
 \noindent dans le cas où $d=1$.
-Et un tel couple existe, avec en plus $u$ monotone. Cela a été démontré par Bates en 1997. On a même réussi à avoir des informations sur le comportement des solutions. Tout d'abord définissons la fonction suivante : 
+Et un tel couple existe, avec en plus $u$ monotone. Cela a été démontré $[2]$ par Bates. On a même réussi à avoir des informations sur le comportement des solutions. Tout d'abord définissons la fonction suivante : 
 
 \begin{equation}
 	g(u,a,d) = u - \frac{1}{d} f(u)
 \end{equation}
-ce qui correspond au produit de convolution $K*u$ dans le cas où $c=0$. De plus, en supposant que $g$ a au plus trois intervalles de monotonie c'est à dire que :
+ce qui correspond au produit de convolution $K*u$ dans le cas où $u$ est solution stationnaire (donc $c=0$). De plus, en supposant que $g$ a au plus trois intervalles de monotonie c'est à dire que :
 \begin{equation*}
 g'>0 \text{ sur } [0,\beta[\cup]\gamma,1], \text{ et } g'<0 \text{ sur } ]\beta,\gamma[
 \end{equation*}
@@ -172,10 +172,10 @@ on peut définir pour $k \in \{ g(u,a,d), u \in [0,\beta[\} \cap \{ g(u,a,d), u 
 	g_k(u,a,d) = \left \{ \begin{array}{cc} g(u,a,d), \text{ si } u \in  [0,\beta_1[\cup]\beta_2,1] \\ k , \text{ si } u \in [\beta_1,\beta_2] \end{array} \right.
 \end{equation*}
 
-\noindent où $g(\beta_1,a,d) = g(\beta_2,a,d) = k$, $\beta_1 \in [0,\beta]$ et $\beta_2 \in [\gamma,1]$. On peut alors énoncé le résultat de Bates.
+\noindent où $g(\beta_1,a,d) = g(\beta_2,a,d) = k$, $\beta_1 \in [0,\beta]$ et $\beta_2 \in [\gamma,1]$. On peut alors énoncé le résultat de $[2]$.
 
 \begin{Theoreme}[Bates 97]
-	Soit $(u,c)$ solution de (7) alors : 
+	Soit $(u,c)$ solution de $(7)$, on a  : 
 
 	(i) si $c \neq 0 $ alors $u \in \mathcal{C}^2$
 
@@ -188,7 +188,7 @@ Ce théorème va entrainer de nombreuses conséquences dont les phénomène de b
 
 \subsection{Phénomènes de blocages}
 
-Grâce au théorème 3.1, on peut remarquer dans certains cas, que les solutions sous forme d'onde ont tendance à se "stopper" et à faire apparaitre des discontinuités : c'est ce qu'on appelle des phénomènes de blocages. Ces phénomènes de blocages ont ainsi lieu dans une certaine région continue du $(d,a)$-espace que l'on sait bien décrire grâce au théorème de Bates. Cette question a été traitée notamment par les étudiants ayant participé au stage de recherche organisé aux états-unis par G. Faye. Dans (Fig.2), voici la zone théorique (situé en dessous de la courbe jaune), où il y a phénomène de blocage dans le cas où $f(u) = u(1-u)(u-a)$.
+Grâce au théorème 3.1, on peut remarquer dans certains cas, que les solutions sous forme d'onde ont tendance à se "stopper" et à faire apparaitre des discontinuités : c'est ce qu'on appelle des phénomènes de blocages. Ces phénomènes de blocages ont ainsi lieu dans une certaine région continue du $(a,d)$-espace que l'on sait bien décrire grâce au théorème de Bates. Cette question a été traitée notamment par les étudiants ayant participé au stage de recherche organisé aux états-unis par G. Faye $[3]$. Dans (Fig.2), voici la zone théorique (situé en dessous de la courbe jaune), où il y a phénomène de blocage dans le cas où $f(u) = u(1-u)(u-a)$.
 
 \begin{center}
 \includegraphics[scale = 0.6]{Pinning region.png}
@@ -196,8 +196,9 @@ Grâce au théorème 3.1, on peut remarquer dans certains cas, que les solutions
 Fig 2. Région où a lieu le phénomène de blocage
 \end{center}
 
-\section{Phénomène de seuil} 
-On veut montrer, de la même manière que ce qui a été fait pour la diffusion laplacienne, l'existence d'un seuil $\ell *$ tel qu'on ait l'alternative :
+
+
+Maintenant, on veut montrer, de la même manière que ce qui a été fait pour la diffusion laplacienne, l'existence d'un seuil $\ell *$ tel qu'on ait l'alternative :
 
 $\cdot~ \forall \ell < \ell^* , u(t,x) \underset{t \to +\infty}{\overset{unif}{\longrightarrow}}0$ (Extinction)
 
@@ -205,9 +206,9 @@ $\cdot ~\forall \ell > \ell^* , u(t,x) \underset{t \to +\infty}{\overset{loc. un
 
 $\cdot$ et pour $\ell = \ell^* $ , $u(t,x) \underset{t \to +\infty}{\overset{unif}{\longrightarrow}}U_{*}(x)$ (Ground state)
 
-\noindent où $U_*$ est l'unique solution de l'équation $U'' + f(U) = 0$ avec $U(\pm \infty) = 0$ et $ 0 \le U \le 1 $. Cette fonction que l'on présentera plus tard, a été étudié dans un article de Chmaj. 
+\noindent où $U_*$ est solution de l'équation $d(K*U-U) + f(U) = 0$ avec $U(\pm \infty) = 0$ et $ 0 \le U \le 1 $. L'existence a été étudiée dans [3]. A partir de maintenant on supposera que $f(u) = u(1-u)(u-a)$.
 
-\subsection{Existence de $\ell_0$}
+\section{Existence de $\ell_0$}
 
 Commençons, par analogie avec le cas du laplacien, par montrer l'existence de $\ell_0>0$ tel que $\forall \ell < \ell_0 , u(t,x) \underset{t \to +\infty}{\overset{unif}{\longrightarrow}}0$ (Extinction). \newline
 
@@ -262,7 +263,7 @@ On obtient alors une équation différentielle autonome, et le portrait de phase
 
 \noindent Le théorème 4.2 se démontre alors en utilisant ce lemme avec le principe de comparaison. \newline 
 
-Maintenant, on veut utiliser ce résultat pour démontrer l'existence de $\ell_0$. Il s'agit donc de montrer qu'à partir d'une certaine valeur de $\ell$, on est sûr que notre solution sera dans $[0,a[$ à partir d'un certain t, et donc y restera et convergera uniformément vers 0. Nous avons réussi à démontrer ce résultat dans le cas où $f(u) = u(1-u)(u-a)$, avec $a \in ]0,1[$, ainsi que $K(x) = \frac{e^{-|x|}}{2}$, mais sous une certaine contrainte pour le coefficient de diffusion $d>0$. \newline 
+Maintenant, on veut utiliser ce résultat pour démontrer l'existence de $\ell_0$. Il s'agit donc de montrer qu'à partir d'une certaine valeur de $\ell$, on est sûr que notre solution sera dans $[0,a[$ à partir d'un certain t, et donc y restera et convergera uniformément vers 0. Nous avons réussi à démontrer ce résultat dans le cas où $K(x) = \frac{e^{-|x|}}{2}$, mais sous une certaine contrainte pour le coefficient de diffusion $d>0$. \newline 
 
 \begin{Theoreme}[Théorème d'existence de $\ell_0$]Soient $\ell>0$ et $u$ solution de l'équation :
 \begin{equation}
@@ -388,22 +389,142 @@ Fig. 4 Pas d'extinction pour $d = 0,1$, $a = 0,35$ et $l=0,5$
 Cependant, cet absence de seuil pour l'extinction laisse place à un autre totalement différent : il semblerait que le seuil ne sépare pas la propagation de l'extinction, mais plutôt d'une zone de solution de type "ground state".
 
 
-\subsection{Ground State}
+\section{Solutions Ground State}
+
+\subsection{Résultats}
+
+Dans cette partie, nous allons regarder les solutions stationaires homoclines en 0 de (4), c'est à dire les solutions de l'équation : 
+\begin{equation}
+\left \{
+\begin{array}{cc}
+0  = & d(-U+K*U)+f(U) \\
+U(\pm \infty) = & 0
+\end{array}
+\right.
+\end{equation}
+
+On sait $[3]$ qu'il existe des solutions de $(12)$ qui sont dans $L^2(\mathbb{R})$, paires et décroissantes sur $]0,+\infty[$. Notre objectif et de rappeler les principaux résultats de $[3]$ pour de tels solutions et de les illustrer avec des graphiques. Voici la proposition $[3]$ sur laquelle nous allons nous appuyer : 
+
+\begin{Theoreme}[Chmaj 2006]
+	Soit $g$ la fonction de $(8)$. Sous les mêmes hypothèses sur $g$, nous avons les alternatives suivantes : 
+
+- $u$ est solution de $(12)$ de classe $C^{\infty}(\mathbb{R})$
+
+- il exsite une solution de $(12)$ de classe $C^{\infty}(\mathbb{R})$ ou de classe $C^{\infty}$ sur $\mathbb{R}^*$ et une famille de solutions de $(12)$ discontinues
+
+- il existe une famille de solutions de $(12)$ discontinues
+\end{Theoreme}
+
+On peut remarquer que nous sommes bien dans les conditions de ce théorème lorsque $f(u) = u(1-u)(u-a)$. Par ailleurs, dans le cas où $g$ est monotone croissante, il y a unique solution de classe $C^{\infty}(\mathbb{R})$.
+Pour avoir une meilleure compréhension de ce qu'il se passe, prenons un noyau facile a étudié : $K(x) = \frac{e^{-|x|}}{2}$.\newline 
+
+La particularité de ce noyau $K$ est qu'avec ce dernier, nous avons la relation :
+\begin{equation*}
+	(K*u)'' = K*u-u
+\end{equation*}
+et comme, lorsque $U$ est solution de $(12)$, on a $g(U,a,d) = K*U$, on obtient la relation : 
+\begin{equation}
+ 	(g(u,a,d))'' = g(u,a,d) - u  \Leftrightarrow w'' = w - u 
+\end{equation}
+en posant $w=g(u,a,d)$.
+Ainsi, dans le cas où $g$ serai inversible, on a qu'il suffit de résoudre l'équation différentielle ordinaire (pour $a$ et $d$ fixées) :
+\begin{equation}
+	w'' = w - g^{-1}(w)
+\end{equation}
+Or dans notre cas, $g$ n'est pas du tout inversible. L'astuce est donc d'inverser partiellement $g$ sur ses intervalles de monotonie (croissante) pour ensuite en tirer une solution. Nous allons donc passer par deux problèmes annexes : 
+\begin{equation*}
+	(i)~~ w'' = w - g_-^{-1}(w) ~~~~~~ (ii)~~ w'' = w - g_+^{-1}(w)
+\end{equation*}
+où $g_-^{-1}$ et $g_+^{-1}$ sont respectivement les inverses de $g$ sur $[0, \beta[$ et $]\gamma, 1]$. Ainsi, notre problème est bien défini par morceau et notre objectif va être de connnecter les orbites de $(i)$ passant par $0$ avec les orbites de $(ii)$. On notera par la suite $m = g(\beta)$ et $M = g(\gamma)$.
+
+\subsection{Portrait de phase et solutions}
+
+Nous allons maintenant tracer nos portraits de phases des équations $(i)$ et $(ii)$. Tout d'abord, on peut noter qu'on a déjà le Hamiltonien $[5]$ pour ce problème. 
+\begin{equation}
+	H_{\pm}(w,v) = \frac{1}{2} v^2 + G_{\pm}(w) 
+\end{equation}
+où $ G_{\pm}(w,v) = -\frac{1}{2} w^2 + \frac{3}{4d} (g_{\pm}^{-1}(w))^4 - \frac{2}{3d}(1+a)(g_{\pm}^{-1}(w))^3 + \frac{1}{2}(1+\frac{a}{d})(g_{\pm}^{-1}(w))^2$.\newline
+
+Ainsi, on veut tracer les lignes de niveaux de $H_-$ passant par $(0,0)$ pour résoudre le problème $(i)$ dans notre cas : comme $H_-(0,0) = 0$, on obtient la relation $v = \pm \sqrt{-2G_-(w)} $. Enfin, on reconnecte [3] les deux orbites définies juste avant en les "collant" avec une orbite de $(ii)$. De cette manière, on construit nos solutions homoclines et on peut retrouver toutes les alternatives du théorèmes 5.1.
+
+\subsubsection{Cas famille de solutions discontinues}
+Pour avoir une famille de solution discontinues (cas 3 du théorème 5.1), il suffit que $G_-(m)<0$. C'est le cas lorsque $a=d=0.2$.
+
+\begin{center}
+\includegraphics[scale = 0.5]{Cas 3.png}
+\includegraphics[scale = 0.5]{Ground State discontinu a,d=0.2.png}
+ 
+Fig.4 Famille de solution discontinue pour $a=d=0.2$
+\end{center}
+
+La solution tracée à droite s'obtient en choisissant une valeur $t$ comprise entre  $M$ et $m$ : l'orbite qui passe de la courbe bleue à la courbe rouge lorsque $w=t$ corresponds à la solution $W$ qui nous permet d'obtenir $U$.
 
 
+\subsubsection{Solutions régulières et famille discontinues}
+Pour obtenir une telle configuration, plusieurs cas de figure se présentent : 
+
+\noindent - soit  $G_-(m)=0$ et il y aura une solution régulière sur $\mathbb{R}^*$ et une famille de solution discontinues : 
+
+\begin{center}
+\includegraphics[scale = 0.5]{Cas 2.5.png}
+\includegraphics[scale = 0.5]{Ground State violet.png}
+\includegraphics[scale = 0.45]{Ground State violet discontinu.png}
+ 
+Fig.5 Solution régulière sur $\mathbb{R}^*$ (haut-droite) et famille de solution discontinue (bas) pour $a=0.1$ et $d=0.2358...$
+\end{center}
+
+\noindent - soit $G_-(m)>0$ et il y aura une solution de classe $C^{\infty}$ sur $\mathbb{R}$ et une famille de solutions discontinues : 
+
+\begin{center}
+\includegraphics[scale = 0.5]{Cas 2.png}
+\includegraphics[scale = 0.5]{Ground State régulier a=0.05 d=0.25.png}
+\includegraphics[scale = 0.5]{Ground State discontinu a=0.05 d=0.25.png}
+ 
+Fig.6 Solution $C^{\infty}$ sur $\mathbb{R}^*$ (droite) et solutions discontinues (bas) pour $a=0.05$ et $d=0.25$
+\end{center}
+
+\subsubsection{Cas continu}
+Enfin, on peut voir que la présence des courbes rouges qui intersectent la bleue donne l'existence des solutions discontinues : ces dernières étant limitées par $M$, il suffit donc que $G_-(M) <0$ pour retirer la présence de telles solutions : 
+
+\begin{center}
+\includegraphics[scale = 0.5]{Cas 1.png}
+\includegraphics[scale = 0.5]{Ground State régulier a=0.1 d=0.3.png}
+
+Fig.7 Solutions de classe $C^{\infty}$ sur $\mathbb{R}$ pour $a=0.1$ et $d=0.3$
+\end{center}
+
+Pour terminer notre cas, on voit que dès que $d>\frac{1}{3}(a^2-a+1)$, $g$ sera strictement croissanteet donc inversible : il y aura alors automatiquement une unique solution continue. Pour $d = \frac{1}{3}(a^2-a+1)$ les mêmes cas précédents vont apparaitre sans discontinuité en fonction de la valeur de $G_-(m)$. \newline
+
+On a donc pu illustrer toutes les alternatives, avec leurs conditions d'apparition, ce qui nous permet de dresser un petit graphique récapitulatif de tout ce que l'on a appris dans notre contexte : 
+
+\begin{center}
+\includegraphics[scale = 0.7]{GS region.png}
+
+Fig.8 Différentes régions des Ground States et pinning pour $a\in [0,\frac{1}{2}]$
+\end{center} 
+
+\noindent \textit{Légende :}
+
+(1) : Famille de solutions discontinues
+
+(2) : Solution continue et famille de solutions discontinues
+
+(3) : Unique solution continue
+
+\subsection{Stabilité}
 
 
+\section{Références}
 
+\noindent $[1]$ : A.  Zlatos,  Sharp  transition  between  extinction  and  propagation  of  reaction,  J.  Amer.Math. Soc. 19 (2006), 251–263.\newline
 
+\noindent $[2]$ : P.  W.  Bates,  P.  C.  Fife,  X.  Ren,  and  X.  Wang,  Traveling  waves  in  a  convolution  modelfor phase  transitions,Arch.Rational  Mech.Anal.138(1997),  105-136. \newline 
 
+\noindent $[3]$ : A. Chmaj, X. Ren, Homoclinic Solutions of an Integral Equation : Existence and Stability, Journal of Differential Equations 155 (1999), 17-43. \newline
 
+\noindent $[4]$ : E.Chasseigne, M. Chaves, J. Rossi, Assymptotic behaviour for nonlocal diffusion equations, J. Math. Pures Appl. 86 (2006) 271-291. \newline	
 
-
-
-
-
-
-
+\noindent $[5]$ : T. Anderson, G. Faye, A. Scheel, D. Staufffer, Pinning and Unpinning in Nonlocal Systems, Journal of Dynamics and Differential Equations 28,   897-923 (2016)
 
 
 \end{document}
